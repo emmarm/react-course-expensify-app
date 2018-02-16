@@ -1,6 +1,14 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { startAddExpense, addExpense, editExpense, startRemoveExpense, removeExpense, setExpenses, startSetExpenses } from '../../actions/expenses';
+import { 
+  startAddExpense,
+  addExpense,
+  startEditExpense,
+  editExpense,
+  startRemoveExpense,
+  removeExpense,
+  setExpenses,
+  startSetExpenses } from '../../actions/expenses';
 import expenses from '../fixtures/expenses';
 import database from '../../firebase/firebase';
 
@@ -23,6 +31,23 @@ test('Should set up "Remove Expense" action object', () => {
   });
 });
 
+test('Should remove expense from database and store', (done) => {
+  const store = createMockStore({});
+  const id = expenses[0].id;
+  store.dispatch(startRemoveExpense({ id })).then(() => {
+    const actions = store.getActions();
+    expect(actions[0]).toEqual({
+      type: 'REMOVE_EXPENSE',
+      id
+    });
+
+    return database.ref(`expenses/${id}`).once('value');
+  }).then((snapshot) => {
+    expect(snapshot.val()).toBe(null);
+    done();
+  });
+});
+
 test('Should set up "Edit Expense" action object', () => {
   const action = editExpense('8675309', { description: 'Edited' });
   expect(action).toEqual({
@@ -31,6 +56,29 @@ test('Should set up "Edit Expense" action object', () => {
     updates: {
       description: 'Edited'
     }
+  });
+});
+
+test('Should edit expense in database', (done) => {
+  const store = createMockStore({});
+  const id = expenses[0].id;
+  const updates = { amount: 9001, note: "It's over 9000!" };
+  store.dispatch(startEditExpense(id, updates)).then(() => {
+    const actions = store.getActions();
+    expect(actions[0]).toEqual({
+      type: 'EDIT_EXPENSE',
+      id,
+      updates
+    });
+
+    return database.ref(`expenses/${id}`).once('value');
+  }).then((snapshot) => {
+    expect(snapshot.val()).toEqual({
+      description: expenses[0].description,
+      createdAt: expenses[0].createdAt,
+      ...updates
+    });
+    done();
   });
 });
 
@@ -114,45 +162,3 @@ test('Should fetch expenses data from database', (done) => {
   });
 });
 
-test('Should remove expense from database and store', (done) => {
-  const store = createMockStore({});
-  const id = expenses[0].id;
-  store.dispatch(startRemoveExpense({ id })).then(() => {
-    const actions = store.getActions();
-    expect(actions[0]).toEqual({
-      type: 'REMOVE_EXPENSE',
-      id
-    });
-
-    return database.ref(`expenses/${id}`).once('value');
-  }).then((snapshot) => {
-    expect(snapshot.val()).toBe(null);
-    done();
-  });
-});
-
-// test('Should add expense to database and store', (done) => {
-//   const store = createMockStore({});
-//   const expenseData = {
-//     description: 'Shoes',
-//     amount: 7295,
-//     createdAt: 1513728000000,
-//     note: 'comfy'
-//   };
-
-//   store.dispatch(startAddExpense(expenseData)).then(() => {
-//     const actions = store.getActions();
-//     expect(actions[0]).toEqual({
-//       type: 'ADD_EXPENSE',
-//       expense: {
-//         id: expect.any(String),
-//         ...expenseData
-//       }
-//     });
-
-//     return database.ref(`expenses/${actions[0].expense.id}`).once('value');
-//   }).then((snapshot) => {
-//     expect(snapshot.val()).toEqual(expenseData);
-//     done();
-//   });
-// });
