@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import CategorySelect from './CategorySelect';
@@ -129,6 +130,11 @@ export default class ExpenseForm extends React.Component {
           <button className="button">
             {this.props.expense ? 'Save Expense' : 'Add Expense'}
           </button>
+        </div>
+        <div>
+          <Link to="/dashboard" className="button button--secondary">
+            Cancel
+          </Link>
         </div>
       </form>
     )

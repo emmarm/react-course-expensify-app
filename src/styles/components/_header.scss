@@ -1,12 +1,17 @@
 .header {
-  background-color: $dark-blue;
+  background-color: $dark-primary;
 }
 
 .header__title {
   color: white;
   text-decoration: none;
   h1 {
+    font-size: $font-l-size;
     margin: 0;
+
+    @media (min-width: $desktop-breakpoint) {
+      font-size: $font-xxl-size;
+    }
   }
 }
 
@@ -14,5 +19,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $s-size 0;
+  
+  @media (min-width: $desktop-breakpoint) {
+    padding: $m-size 0;
+  }
 }

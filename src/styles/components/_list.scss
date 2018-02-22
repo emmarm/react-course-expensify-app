@@ -1,10 +1,29 @@
 .list-header {
   background: $off-white;
   border: 1px solid darken($off-white, 7%);
-  color: gray;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   padding: $s-size $m-size;
+
+  @media (min-width: $desktop-breakpoint) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.list-header__summary {
+  color: $dark-gray;
+  font-size: $font-m-size;
+  font-weight: 300;
+  margin: 0;
+  span {
+    font-weight: bold;
+  }
+
+  @media (min-width: $desktop-breakpoint) {
+    font-size: $font-l-size;
+  }
 }
 
 .list-body {

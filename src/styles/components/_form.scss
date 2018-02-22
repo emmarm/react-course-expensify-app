@@ -3,7 +3,11 @@
   flex-direction: column;
 
   > * {
-    margin-bottom: $m-size;
+    margin-bottom: $s-size;
+    
+    @media (min-width: $desktop-breakpoint) {
+      margin-bottom: $m-size;
+    }
   }
 }
 

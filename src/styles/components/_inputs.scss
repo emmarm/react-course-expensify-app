@@ -1,17 +1,27 @@
 .text-input {
   border: 1px solid #cacccd;
-  height: 50px;
-  max-width: 200px;
-  padding: $s-size;
-  font-size: $font-l-size;
+  font-size: $font-m-size;
   font-weight: 300;
+  height: 40px;
+  padding: $s-size;
+}
+
+.text-input--narrow {
+  max-width: 210px;
 }
 
 .select {
   @extend .text-input;
+  width: 100%;
+  background: white;
+  border-radius: 0;
 }
 
 .textarea {
   @extend .text-input;
-  height: 10rem;
+  height: 5rem;
+
+  @media (min-width: $desktop-breakpoint) {
+    height: 10rem;
+  }
 }

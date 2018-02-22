@@ -2,11 +2,12 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-bottom: $m-size;
+  margin-bottom: $s-size;
   
   @media (min-width: $desktop-breakpoint) {
     flex-direction: row;
-    margin-bottom: $l-size;
+    justify-content: center;
+    margin-bottom: $m-size;
   }
 }
 

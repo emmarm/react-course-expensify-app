@@ -20,7 +20,7 @@ export class EditExpensePage extends React.Component {
             <h1 className="page-header__title">Edit Expense</h1>
           </div>
         </div>
-        <div className="content-container">
+        <div className="content-container--narrow">
           <ExpenseForm
             expense={this.props.expense}
             onSubmit={this.onSubmit}
