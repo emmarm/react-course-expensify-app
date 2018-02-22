@@ -1,16 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { SingleDatePicker } from 'react-dates';
 import moment from 'moment';
+import { SingleDatePicker } from 'react-dates';
+import CategorySelect from './CategorySelect';
 
 export default class ExpenseForm extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
       description: props.expense ? props.expense.description : '',
-      amount: props.expense ?(props.expense.amount / 100).toFixed(2) : '',
+      amount: props.expense ? parseFloat(props.expense.amount / 100).toFixed(2) : '',
       createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
       calendarFocused: false,
+      category: props.expense ? props.expense.category : '',
       note: props.expense ? props.expense.note : '',
       error: ''
     };
@@ -30,6 +32,7 @@ export default class ExpenseForm extends React.Component {
         description: this.state.description,
         amount: parseFloat(this.state.amount, 10) * 100,
         createdAt: this.state.createdAt.valueOf(),
+        category: this.state.category,
         note: this.state.note
       });
     }
@@ -49,7 +52,17 @@ export default class ExpenseForm extends React.Component {
       }));
     }
   };
-onDateChange = (createdAt) => {
+  onAmountBlur = (e) => {
+    const amountEntered = e.target.value;
+    let amount;
+    if (amountEntered) {
+      amount = parseFloat(amountEntered).toFixed(2);
+    } else {
+      amount = '';
+    }
+    this.setState(() => ({ amount }));
+  };
+  onDateChange = (createdAt) => {
     if (createdAt) {
       this.setState(() => ({
         createdAt
@@ -60,6 +73,9 @@ onDateChange = (createdAt) => {
     this.setState(() => ({
       calendarFocused: focused
     }));
+  };
+  onCategoryChange = (category) => {
+    this.setState(() => ({ category }));
   };
   onNoteChange = (e) => {
     const note = e.target.value;
@@ -88,6 +104,7 @@ onDateChange = (createdAt) => {
           placeholder='Amount'
           value={this.state.amount}
           onChange={this.onAmountChange}
+          onBlur={this.onAmountBlur}
         />
         <SingleDatePicker
           date={this.state.createdAt}
@@ -96,6 +113,10 @@ onDateChange = (createdAt) => {
           onFocusChange={this.onFocusChange}
           numberOfMonths={1}
           isOutsideRange={() => false}
+        />
+        <CategorySelect
+          value={this.state.category}
+          onCategoryChange={this.onCategoryChange}
         />
         <textarea
           className="textarea"

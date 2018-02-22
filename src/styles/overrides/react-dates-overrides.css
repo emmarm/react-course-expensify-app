@@ -1,0 +1,11 @@
+.DateRangePickerInput__clear-dates {
+  padding: 0;
+  margin: 0 5px 0 0;
+}
+
+.DateInput {
+  line-height: 45px;
+  padding: 0;
+  width: 100px;
+  height: 50px;
+}

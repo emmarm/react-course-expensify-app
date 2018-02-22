@@ -25,3 +25,9 @@ export const setEndDate = (endDate) => ({
   type: 'SET_END_DATE',
   endDate
 });
+
+// Set Category
+export const setCategory = (category = 'General') => ({
+  type: 'SET_CATEGORY',
+  category
+});
