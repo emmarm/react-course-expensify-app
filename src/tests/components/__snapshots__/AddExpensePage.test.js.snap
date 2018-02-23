@@ -16,7 +16,7 @@ exports[`Should render Add Expense Page correctly 1`] = `
     </div>
   </div>
   <div
-    className="content-container"
+    className="content-container--narrow"
   >
     <ExpenseForm
       onSubmit={[Function]}

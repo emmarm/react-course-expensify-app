@@ -52,7 +52,8 @@ test('Should edit expense', () => {
       description: 'Banana',
       note: 'Yummy',
       amount: 200,
-      createdAt: moment(0).subtract(4, 'days').valueOf()
+      createdAt: moment(0).subtract(4, 'days').valueOf(),
+      category: 'general'
     },
     expenses[2],
     expenses[3]

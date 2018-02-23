@@ -11,7 +11,7 @@ exports[`Should render ExpenseListFilters correctly using applied filters 1`] = 
       className="input-group__item"
     >
       <input
-        className="text-input"
+        className="text-input text-input--narrow"
         onChange={[Function]}
         placeholder="Search in expenses"
         type="text"
@@ -125,6 +125,15 @@ exports[`Should render ExpenseListFilters correctly using applied filters 1`] = 
         withPortal={false}
       />
     </div>
+    <div
+      className="input-group__item"
+    >
+      <Connect(CategorySelect)
+        filter={true}
+        onCategoryChange={[Function]}
+        value="personal"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -140,7 +149,7 @@ exports[`Should render ExpenseListFilters correctly using default filters 1`] = 
       className="input-group__item"
     >
       <input
-        className="text-input"
+        className="text-input text-input--narrow"
         onChange={[Function]}
         placeholder="Search in expenses"
         type="text"
@@ -252,6 +261,15 @@ exports[`Should render ExpenseListFilters correctly using default filters 1`] = 
         weekDayFormat="dd"
         withFullScreenPortal={false}
         withPortal={false}
+      />
+    </div>
+    <div
+      className="input-group__item"
+    >
+      <Connect(CategorySelect)
+        filter={true}
+        onCategoryChange={[Function]}
+        value="all"
       />
     </div>
   </div>

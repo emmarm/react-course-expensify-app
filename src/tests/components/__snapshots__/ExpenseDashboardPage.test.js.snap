@@ -2,7 +2,17 @@
 
 exports[`Should render ExpenseDashboardPage correctly 1`] = `
 <div>
-  <Connect(ExpensesSummary) />
+  <div
+    className="page-header"
+  >
+    <Link
+      className="button button--wide"
+      replace={false}
+      to="/create"
+    >
+      Add Expense
+    </Link>
+  </div>
   <Connect(ExpenseListFilters) />
   <Connect(ExpenseList) />
 </div>

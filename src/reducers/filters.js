@@ -5,7 +5,7 @@ const filtersReducerDefaultState = {
   sortBy: 'date',
   startDate: moment().startOf('month'),
   endDate: moment().endOf('month'),
-  category: 'All'
+  category: 'all'
 };
 
 export default (state = filtersReducerDefaultState, action) => {

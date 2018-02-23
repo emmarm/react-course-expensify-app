@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const CategorySelect = (props) => (
+export const CategorySelect = (props) => (
   <div>
     <select
       className="select"
@@ -12,29 +12,29 @@ const CategorySelect = (props) => (
       }}
     >
       {props.filter &&
-        <option value='All'>
+        <option value='all'>
           All Categories
         </option>
       }
-      <option value='General'>
+      <option value='general'>
         General
       </option>
-      <option value='Food'>
+      <option value='food'>
         Food
       </option>
-      <option value='Household'>
+      <option value='household'>
         Household
       </option>
-      <option value='Transportation'>
+      <option value='transportation'>
         Transportation
       </option>
-      <option value='Utilities'>
+      <option value='utilities'>
         Utilities
       </option>
-      <option value='Personal'>
+      <option value='personal'>
         Personal
       </option>
-      <option value='Social'>
+      <option value='social'>
         Social
       </option>
     </select>

@@ -15,6 +15,7 @@ exports[`Should render ExpenseForm with expense data 1`] = `
   />
   <input
     className="text-input"
+    onBlur={[Function]}
     onChange={[Function]}
     placeholder="Amount"
     type="text"
@@ -96,6 +97,10 @@ exports[`Should render ExpenseForm with expense data 1`] = `
     withFullScreenPortal={false}
     withPortal={false}
   />
+  <CategorySelect
+    onCategoryChange={[Function]}
+    value="food"
+  />
   <textarea
     className="textarea"
     onChange={[Function]}
@@ -108,6 +113,15 @@ exports[`Should render ExpenseForm with expense data 1`] = `
     >
       Save Expense
     </button>
+  </div>
+  <div>
+    <Link
+      className="button button--secondary"
+      replace={false}
+      to="/dashboard"
+    >
+      Cancel
+    </Link>
   </div>
 </form>
 `;
@@ -127,6 +141,7 @@ exports[`Should render ExpenseForm with no data 1`] = `
   />
   <input
     className="text-input"
+    onBlur={[Function]}
     onChange={[Function]}
     placeholder="Amount"
     type="text"
@@ -208,6 +223,10 @@ exports[`Should render ExpenseForm with no data 1`] = `
     withFullScreenPortal={false}
     withPortal={false}
   />
+  <CategorySelect
+    onCategoryChange={[Function]}
+    value="general"
+  />
   <textarea
     className="textarea"
     onChange={[Function]}
@@ -220,6 +239,15 @@ exports[`Should render ExpenseForm with no data 1`] = `
     >
       Add Expense
     </button>
+  </div>
+  <div>
+    <Link
+      className="button button--secondary"
+      replace={false}
+      to="/dashboard"
+    >
+      Cancel
+    </Link>
   </div>
 </form>
 `;
@@ -239,6 +267,7 @@ exports[`Should render error for invalid form submission 1`] = `
   />
   <input
     className="text-input"
+    onBlur={[Function]}
     onChange={[Function]}
     placeholder="Amount"
     type="text"
@@ -320,6 +349,10 @@ exports[`Should render error for invalid form submission 1`] = `
     withFullScreenPortal={false}
     withPortal={false}
   />
+  <CategorySelect
+    onCategoryChange={[Function]}
+    value="general"
+  />
   <textarea
     className="textarea"
     onChange={[Function]}
@@ -332,6 +365,15 @@ exports[`Should render error for invalid form submission 1`] = `
     >
       Add Expense
     </button>
+  </div>
+  <div>
+    <Link
+      className="button button--secondary"
+      replace={false}
+      to="/dashboard"
+    >
+      Cancel
+    </Link>
   </div>
 </form>
 `;
@@ -356,6 +398,7 @@ exports[`Should render error for invalid form submission 2`] = `
   />
   <input
     className="text-input"
+    onBlur={[Function]}
     onChange={[Function]}
     placeholder="Amount"
     type="text"
@@ -437,6 +480,10 @@ exports[`Should render error for invalid form submission 2`] = `
     withFullScreenPortal={false}
     withPortal={false}
   />
+  <CategorySelect
+    onCategoryChange={[Function]}
+    value="general"
+  />
   <textarea
     className="textarea"
     onChange={[Function]}
@@ -449,6 +496,15 @@ exports[`Should render error for invalid form submission 2`] = `
     >
       Add Expense
     </button>
+  </div>
+  <div>
+    <Link
+      className="button button--secondary"
+      replace={false}
+      to="/dashboard"
+    >
+      Cancel
+    </Link>
   </div>
 </form>
 `;

@@ -4,7 +4,7 @@ import { ExpenseListFilters } from '../../components/ExpenseListFilters';
 import { defaultFilters, appliedFilters } from '../fixtures/filters';
 import moment from 'moment';
 
-let setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate, wrapper;
+let setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate, setCategory, wrapper;
 
 beforeEach(() => {
   setTextFilter = jest.fn();
@@ -12,6 +12,7 @@ beforeEach(() => {
   sortByAmount = jest.fn();
   setStartDate = jest.fn();
   setEndDate = jest.fn();
+  setCategory = jest.fn();
   wrapper = shallow(
     <ExpenseListFilters
       filters={defaultFilters}
@@ -20,6 +21,7 @@ beforeEach(() => {
       sortByAmount={sortByAmount}
       setStartDate={setStartDate}
       setEndDate={setEndDate}
+      setCategory={setCategory}
     />
   );
 });
@@ -79,3 +81,8 @@ test('Should handle date picker focus changes', () => {
   expect(wrapper.state('calendarFocused')).toBe(calendarFocused);
 });
 
+// test('Should update category on category change', () => {
+//   const category = 'transportation';
+//   wrapper.find('CategorySelect').prop('onCategoryChange')(category);
+//   expect(wrapper.state('category')).toBe(category);
+// });

@@ -7,21 +7,27 @@ exports[`Should render ExpenseList with empty message 1`] = `
   <div
     className="list-header"
   >
-    <div
-      className="show-for-mobile"
+    <p
+      className="list-header__summary"
     >
-      Expenses
-    </div>
-    <div
-      className="show-for-wide"
+      Showing 
+      <span>
+        0
+      </span>
+       expense
+      s
+       (
+      4
+       hidden)
+    </p>
+    <p
+      className="list-header__summary"
     >
-      Expense
-    </div>
-    <div
-      className="show-for-wide"
-    >
-      Amount
-    </div>
+      Total: 
+      <span>
+        $0.00
+      </span>
+    </p>
   </div>
   <div
     className="list-body"
@@ -44,27 +50,34 @@ exports[`Should render ExpenseList with expenses 1`] = `
   <div
     className="list-header"
   >
-    <div
-      className="show-for-mobile"
+    <p
+      className="list-header__summary"
     >
-      Expenses
-    </div>
-    <div
-      className="show-for-wide"
+      Showing 
+      <span>
+        4
+      </span>
+       expense
+      s
+       (
+      0
+       hidden)
+    </p>
+    <p
+      className="list-header__summary"
     >
-      Expense
-    </div>
-    <div
-      className="show-for-wide"
-    >
-      Amount
-    </div>
+      Total: 
+      <span>
+        $10.00
+      </span>
+    </p>
   </div>
   <div
     className="list-body"
   >
     <Component
       amount={100}
+      category="food"
       createdAt={0}
       description="Pineapple"
       id="1"
@@ -73,6 +86,7 @@ exports[`Should render ExpenseList with expenses 1`] = `
     />
     <Component
       amount={200}
+      category="general"
       createdAt={-345600000}
       description="Banana"
       id="2"
@@ -81,6 +95,7 @@ exports[`Should render ExpenseList with expenses 1`] = `
     />
     <Component
       amount={300}
+      category="transportation"
       createdAt={345600000}
       description="Apple"
       id="3"
@@ -89,6 +104,7 @@ exports[`Should render ExpenseList with expenses 1`] = `
     />
     <Component
       amount={400}
+      category="personal"
       createdAt={-864000000}
       description="Mango"
       id="4"

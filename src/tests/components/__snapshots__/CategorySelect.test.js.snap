@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Category Select correctly 1`] = `
+<div>
+  <select
+    className="select"
+    onChange={[Function]}
+  >
+    <option
+      value="general"
+    >
+      General
+    </option>
+    <option
+      value="food"
+    >
+      Food
+    </option>
+    <option
+      value="household"
+    >
+      Household
+    </option>
+    <option
+      value="transportation"
+    >
+      Transportation
+    </option>
+    <option
+      value="utilities"
+    >
+      Utilities
+    </option>
+    <option
+      value="personal"
+    >
+      Personal
+    </option>
+    <option
+      value="social"
+    >
+      Social
+    </option>
+  </select>
+</div>
+`;

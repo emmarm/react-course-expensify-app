@@ -7,7 +7,8 @@ test('Should set up default filter values', () => {
     text: '',
     sortBy: 'date',
     startDate: moment().startOf('month'),
-    endDate: moment().endOf('month')
+    endDate: moment().endOf('month'),
+    category: 'all'
   });
 });
 

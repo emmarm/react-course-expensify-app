@@ -6,7 +6,7 @@ export default (expenses, { text, sortBy, startDate, endDate, category }) => {
     const createdAtMoment = moment(expense.createdAt);
     const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, 'day') : true;
     const endDateMatch = endDate ? endDate.isSameOrAfter(createdAtMoment, 'day') : true;
-    const categoryMatch = (expense.category === category) || category === 'All';
+    const categoryMatch = (expense.category === category) || category === 'all';
 
     return textMatch && startDateMatch && endDateMatch && categoryMatch;
   }).sort((a, b) => {

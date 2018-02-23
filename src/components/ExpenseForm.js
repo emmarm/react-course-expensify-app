@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
-import CategorySelect from './CategorySelect';
+import { CategorySelect } from './CategorySelect';
 
 export default class ExpenseForm extends React.Component {
   constructor (props) {
@@ -13,7 +13,7 @@ export default class ExpenseForm extends React.Component {
       amount: props.expense ? parseFloat(props.expense.amount / 100).toFixed(2) : '',
       createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
       calendarFocused: false,
-      category: props.expense ? props.expense.category : '',
+      category: props.expense ? props.expense.category : 'general',
       note: props.expense ? props.expense.note : '',
       error: ''
     };

@@ -16,12 +16,13 @@ exports[`Should render EditExpensePage 1`] = `
     </div>
   </div>
   <div
-    className="content-container"
+    className="content-container--narrow"
   >
     <ExpenseForm
       expense={
         Object {
           "amount": 100,
+          "category": "food",
           "createdAt": 0,
           "description": "Pineapple",
           "id": "1",

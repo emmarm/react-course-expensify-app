@@ -7,19 +7,6 @@ exports[`Should correctly render ExpensesSummary with 1 expense 1`] = `
   <div
     className="content-container"
   >
-    <h1
-      className="page-header__title"
-    >
-      Viewing 
-      <span>
-        1
-      </span>
-       expense
-       totalling 
-      <span>
-        $1.00
-      </span>
-    </h1>
     <div
       className="page-header__actions"
     >
@@ -42,20 +29,6 @@ exports[`Should correctly render ExpensesSummary with multiple expenses 1`] = `
   <div
     className="content-container"
   >
-    <h1
-      className="page-header__title"
-    >
-      Viewing 
-      <span>
-        4
-      </span>
-       expense
-      s
-       totalling 
-      <span>
-        $10.00
-      </span>
-    </h1>
     <div
       className="page-header__actions"
     >

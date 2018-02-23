@@ -77,9 +77,17 @@ test('Should set new date on Date change', () => {
   expect(wrapper.state('createdAt')).toEqual(now);
 });
 
-test('Should set focused value to focused on Focused change', () => {
+test('Should set focused value to "focused" on Focused change', () => {
   const focused = true;
   const wrapper = shallow(<ExpenseForm />);
   wrapper.find('SingleDatePicker').prop('onFocusChange')({ focused });
   expect(wrapper.state('calendarFocused')).toBe(focused);
+});
+
+test('Should update category on category change', () => {
+  const category = 'transportation';
+  const wrapper = shallow(<ExpenseForm />);
+  const CategorySelect = wrapper.find('CategorySelect');
+  CategorySelect.prop('onCategoryChange')(category);
+  expect(wrapper.state('category')).toEqual(category);
 });

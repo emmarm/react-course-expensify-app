@@ -19,8 +19,8 @@ const createMockStore = configureMockStore([thunk]);
 beforeEach((done) => {
   const expensesData = {};
 
-  expenses.forEach(({ id, description, amount, note, createdAt }) => {
-    expensesData[id] = { description, amount, note, createdAt };
+  expenses.forEach(({ id, description, amount, note, createdAt, category }) => {
+    expensesData[id] = { description, amount, note, createdAt, category };
   });
   database.ref(`users/${uid}/expenses`).set(expensesData).then(() => done());
 });
@@ -78,6 +78,7 @@ test('Should edit expense in database', (done) => {
     expect(snapshot.val()).toEqual({
       description: expenses[0].description,
       createdAt: expenses[0].createdAt,
+      category: expenses[0].category,
       ...updates
     });
     done();
@@ -98,7 +99,8 @@ test('Should add expense to database and store', (done) => {
     description: 'Shoes',
     amount: 7295,
     createdAt: 1513728000000,
-    note: 'comfy'
+    note: 'comfy',
+    category: 'General'
   };
 
   store.dispatch(startAddExpense(expenseData)).then(() => {
@@ -124,7 +126,8 @@ test('Should add expense with default values to database and store', (done) => {
     description: '',
     note: '',
     amount: 0,
-    createdAt: 0
+    createdAt: 0,
+    category: 'general'
   };
 
   store.dispatch(startAddExpense({})).then(() => {
