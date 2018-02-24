@@ -20,9 +20,10 @@
   span {
     font-weight: bold;
   }
-
+  
   @media (min-width: $desktop-breakpoint) {
     font-size: $font-l-size;
+    padding: $s-size 0;
   }
 }
 
@@ -35,6 +36,7 @@
 }
 
 .list-item {
+  background: white;
   border: 1px solid darken($off-white, 7%);
   border-top: none;
   color: $dark-gray;

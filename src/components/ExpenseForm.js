@@ -116,6 +116,7 @@ export default class ExpenseForm extends React.Component {
           isOutsideRange={() => false}
         />
         <CategorySelect
+          className="select"
           value={this.state.category}
           onCategoryChange={this.onCategoryChange}
         />

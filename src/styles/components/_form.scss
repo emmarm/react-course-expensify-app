@@ -4,10 +4,6 @@
 
   > * {
     margin-bottom: $s-size;
-    
-    @media (min-width: $desktop-breakpoint) {
-      margin-bottom: $m-size;
-    }
   }
 }
 

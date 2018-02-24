@@ -2,7 +2,7 @@
 
 exports[`Should render ExpenseList with empty message 1`] = `
 <div
-  className="content-container"
+  className="content-container--narrow mobile-full-width"
 >
   <div
     className="list-header"
@@ -45,7 +45,7 @@ exports[`Should render ExpenseList with empty message 1`] = `
 
 exports[`Should render ExpenseList with expenses 1`] = `
 <div
-  className="content-container"
+  className="content-container--narrow mobile-full-width"
 >
   <div
     className="list-header"

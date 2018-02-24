@@ -1,5 +1,5 @@
 .header {
-  background-color: $dark-primary;
+  background-color: rgba(0, 105, 69, 0.5);
 }
 
 .header__title {
@@ -16,9 +16,14 @@
 }
 
 .header__content {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 0;
+
+  @media (min-width: $tablet-breakpoint) {
+    padding: $s-size 0;
+  }
   
   @media (min-width: $desktop-breakpoint) {
     padding: $m-size 0;

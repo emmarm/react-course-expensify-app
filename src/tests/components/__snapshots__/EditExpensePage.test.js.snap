@@ -16,7 +16,7 @@ exports[`Should render EditExpensePage 1`] = `
     </div>
   </div>
   <div
-    className="content-container--narrow"
+    className="content-container--narrow background-box"
   >
     <ExpenseForm
       expense={
@@ -36,13 +36,29 @@ exports[`Should render EditExpensePage 1`] = `
     >
       <div>
         <button
-          className="button button--secondary"
+          className="button button--remove"
           onClick={[Function]}
         >
           Remove Expense
         </button>
       </div>
     </div>
+    <TrashModal
+      contentLabel="Are you sure you want to delete this expense?"
+      expense={
+        Object {
+          "amount": 100,
+          "category": "food",
+          "createdAt": 0,
+          "description": "Pineapple",
+          "id": "1",
+          "note": "",
+        }
+      }
+      handleCloseModal={[Function]}
+      onRemove={[Function]}
+      showTrashModal={false}
+    />
   </div>
 </div>
 `;

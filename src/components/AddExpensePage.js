@@ -19,7 +19,7 @@ export class AddExpensePage extends React.Component {
             <h1 className="page-header__title">Add Expense</h1>
           </div>
         </div>
-        <div className="content-container--narrow">
+        <div className="content-container--narrow background-box">
           <ExpenseForm
             onSubmit={this.onSubmit}
           />

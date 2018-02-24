@@ -31,7 +31,7 @@ test('Should handle startEditExpense', () => {
 
 test('Should handle startRemoveExpense', () => {
   const expense = expenses[0];
-  wrapper.find('button').prop('onClick')();
+  wrapper.find('TrashModal').prop('onRemove')();
   expect(history.push).toHaveBeenLastCalledWith('/dashboard');
   expect(startRemoveExpense).toHaveBeenLastCalledWith({ id: expense.id });
 });

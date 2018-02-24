@@ -1,8 +1,8 @@
 .page-header {
   padding: $m-size 0;
 
-  @media (min-width: $desktop-breakpoint) {
-    padding: $l-size 0;
+  @media (min-width: $tablet-breakpoint) {
+    padding: $l-size 0 $m-size 0;
   }
 }
 
@@ -10,15 +10,14 @@
   font-size: $font-l-size;
   font-weight: 300;
   margin: 0;
+  text-align: center;
+  
   span {
     font-weight: bold;
   }
 
-  @media (min-width: $desktop-breakpoint) {
+  @media (min-width: $tablet-breakpoint) {
     font-size: $font-xl-size;
+    text-align: left;
   }
-}
-
-.page-header__action {
-  margin: $m-size auto 0 auto;
 }

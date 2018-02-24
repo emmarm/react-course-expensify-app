@@ -2,8 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
 import { startEditExpense, startRemoveExpense } from '../actions/expenses';
+import TrashModal from './TrashModal';
 
 export class EditExpensePage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showTrashModal: false
+    };
+  }
   onSubmit = (expense) => {
     this.props.startEditExpense(this.props.expense.id, expense);
     this.props.history.push('/dashboard');
@@ -11,6 +18,16 @@ export class EditExpensePage extends React.Component {
   onRemove = () => {
     this.props.startRemoveExpense({ id: this.props.expense.id });
     this.props.history.push('/dashboard');
+  };
+  handleOpenTrashModal = () => {
+    this.setState(() => ({
+      showTrashModal: true
+    }));
+  };
+  handleCloseTrashModal = () => {
+    this.setState(() => ({
+      showTrashModal: false
+    }));
   };
   render () {
     return (
@@ -20,7 +37,7 @@ export class EditExpensePage extends React.Component {
             <h1 className="page-header__title">Edit Expense</h1>
           </div>
         </div>
-        <div className="content-container--narrow">
+        <div className="content-container--narrow background-box">
           <ExpenseForm
             expense={this.props.expense}
             onSubmit={this.onSubmit}
@@ -28,13 +45,20 @@ export class EditExpensePage extends React.Component {
           <div className="form">
             <div>
               <button
-                className="button button--secondary"
-                onClick={this.onRemove}
+                className="button button--remove"
+                onClick={this.handleOpenTrashModal}
               >
                 Remove Expense
               </button>
             </div>
           </div>
+          <TrashModal
+            showTrashModal={this.state.showTrashModal}
+            handleCloseModal={this.handleCloseTrashModal}
+            expense={this.props.expense}
+            onRemove={this.onRemove}
+            contentLabel='Are you sure you want to delete this expense?'
+          />
         </div>
       </div>
     );

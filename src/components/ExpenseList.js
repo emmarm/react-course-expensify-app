@@ -12,7 +12,7 @@ export const ExpenseList = (props) => {
   const formattedTotal = numeral(total).format('$0,0.00');
   const numberOfHidden = props.expenses.length - numberOfVisible;
   return (
-    <div className="content-container">
+    <div className="content-container--narrow mobile-full-width">
       <div className="list-header">
         <p className="list-header__summary">Showing <span>{numberOfVisible}</span> expense{s} ({numberOfHidden} hidden)</p>
         <p className="list-header__summary">Total: <span>{formattedTotal}</span></p>

@@ -16,9 +16,17 @@
   font-weight: bold;
   height: 4rem;
   line-height: 2rem;
-  margin: 0 auto;
+  margin: $s-size auto;
   text-align: center;
   width: 20rem;
+
+  @media (min-width: $tablet-breakpoint) {
+    margin: 0 auto;
+  }
+
+  @media (min-width: $desktop-breakpoint) {
+    margin: $s-size auto;
+  }
 }
 
 .button--link {
@@ -27,5 +35,10 @@
 
 .button--secondary {
   background: #888;
+  padding: $xs-size;
+}
+
+.button--remove {
+  background: $red;
   padding: $xs-size;
 }

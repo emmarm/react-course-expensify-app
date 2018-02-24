@@ -1,19 +1,27 @@
 .text-input {
+  background: white;
   border: 1px solid #cacccd;
   font-size: $font-m-size;
   font-weight: 300;
-  height: 40px;
+  height: 50px;
   padding: $s-size;
 }
 
 .text-input--narrow {
-  max-width: 210px;
+  width: 324px;
+
+  @media (min-width: $tablet-breakpoint) {
+    width: 30rem;
+  }
+
+  @media (min-width: $desktop-breakpoint) {
+    max-width: 210px;
+  }
 }
 
 .select {
   @extend .text-input;
   width: 100%;
-  background: white;
   border-radius: 0;
 }
 

@@ -4,9 +4,25 @@
 }
 
 .DateInput {
-  box-sizing: border-box;
   line-height: 30px;
-  padding: 0;
-  width: 100px;
-  height: 38px;
+  padding: .3rem 0;
+  width: 140px;
 }
+
+@media (min-width: 30rem) {
+  .DateInput {
+    width: 100px;
+  }
+}
+
+/* .DateInput__display-text {
+  margin-left: 0.6rem;
+} */
+
+/* .date-input--single {
+  padding-left: 1rem;
+} */
+
+/* .DateInput__display-text--has-input {
+  padding-left: 1rem;
+} */

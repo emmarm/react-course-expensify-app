@@ -6,5 +6,21 @@
 
 .content-container--narrow {
   @extend .content-container;
-  max-width: 40rem;
+  max-width: 45rem;
+}
+
+.mobile-full-width {
+  @media (max-width: $tablet-breakpoint) {
+    padding: 0;
+  }
+}
+
+.background-box {
+  background: rgba(white, .7);
+  border: 1px solid darken(white, 10%);
+  padding: $s-size;
+
+  @media (min-width: $desktop-breakpoint) {
+    padding: $m-size;
+  }
 }
