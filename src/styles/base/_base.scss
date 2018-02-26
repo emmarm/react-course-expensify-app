@@ -4,10 +4,12 @@
 
 html {
   font-size: 62.5%;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
-    background:
+  background:
     linear-gradient(
       rgba(255, 255, 255, .7), 
       rgba(255, 255, 255, .3)
@@ -16,7 +18,9 @@ body {
   color: $dark-gray;
   font-family: Helvetica, Arial, sans-serif;
   font-size: $m-size;
+  height: 100%;
   line-height: 1.6;
+  overflow: auto;
 }
 
 button {
@@ -29,4 +33,16 @@ button:disabled {
 
 .is-active {
   font-weight: bold;
+}
+
+.hidden {
+  display: none;
+
+  @media (min-width: $tablet-breakpoint) {
+    display: block;
+  }
+}
+
+.visible {
+  display: block;
 }

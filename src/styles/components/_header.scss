@@ -1,5 +1,8 @@
 .header {
-  background-color: rgba(0, 105, 69, 0.5);
+  background-color: $dark-primary;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header__title {
@@ -23,9 +26,5 @@
 
   @media (min-width: $tablet-breakpoint) {
     padding: $s-size 0;
-  }
-  
-  @media (min-width: $desktop-breakpoint) {
-    padding: $m-size 0;
   }
 }

@@ -6,7 +6,13 @@ import CategorySelect from './CategorySelect';
 
 export class ExpenseListFilters extends React.Component {
   state = {
-    calendarFocused: null
+    calendarFocused: null,
+    filtersHidden: true
+  };
+  toggleHidden = () => {
+    this.setState((prevState) => ({
+      filtersHidden: !prevState.filtersHidden
+    }));
   };
   onTextChange = (e) => {
     this.props.setTextFilter(e.target.value)
@@ -32,50 +38,58 @@ export class ExpenseListFilters extends React.Component {
   };
   render() {
     return (
-      <div>
-        <div className="input-group">
-          <div className="input-group__item">
-            <input
-              type="text"
-              className="text-input text-input--narrow"
-              placeholder="Search in expenses"
-              value={this.props.filters.text}
-              onChange={this.onTextChange}
-            />
-          </div>
-          <div className="input-group__row">
+      <div className="input-wrapper">
+        <button 
+          className="button button--toggle"
+          onClick={this.toggleHidden}
+        >
+          {this.state.filtersHidden === true ? 'Show filters ⇓' : 'Hide filters ⇑'}
+        </button>
+        <div className={this.state.filtersHidden === true ? 'hidden' : null}>
+          <div className="input-group">
             <div className="input-group__item">
-              <select
-                className="select"
-                value={this.props.filters.sortBy}
-                onChange={this.onSortChange}
-              >
-                <option value='date'>
-                  Date
-                </option>
-                <option value='amount'>
-                  Amount
-                </option>
-              </select>
-            </div>
-            <div className="input-group__item">
-              <DateRangePicker
-                startDate={this.props.filters.startDate}
-                endDate={this.props.filters.endDate}
-                onDatesChange={this.onDatesChange}
-                focusedInput={this.state.calendarFocused}
-                onFocusChange={this.onFocusChange}
-                showClearDates={true}
-                numberOfMonths={1}
-                isOutsideRange={() => false}
+              <input
+                type="text"
+                className="text-input text-input--narrow"
+                placeholder="Search in expenses"
+                value={this.props.filters.text}
+                onChange={this.onTextChange}
               />
             </div>
-            <div className="input-group__item">
-              <CategorySelect
-                value={this.props.filters.category}
-                onCategoryChange={this.onCategoryChange}
-                filter={true}
-              />
+            <div className="input-group__row">
+              <div className="input-group__item">
+                <select
+                  className="select"
+                  value={this.props.filters.sortBy}
+                  onChange={this.onSortChange}
+                >
+                  <option value='date'>
+                    Date
+                  </option>
+                  <option value='amount'>
+                    Amount
+                  </option>
+                </select>
+              </div>
+              <div className="input-group__item">
+                <DateRangePicker
+                  startDate={this.props.filters.startDate}
+                  endDate={this.props.filters.endDate}
+                  onDatesChange={this.onDatesChange}
+                  focusedInput={this.state.calendarFocused}
+                  onFocusChange={this.onFocusChange}
+                  showClearDates={true}
+                  numberOfMonths={1}
+                  isOutsideRange={() => false}
+                />
+              </div>
+              <div className="input-group__item">
+                <CategorySelect
+                  value={this.props.filters.category}
+                  onCategoryChange={this.onCategoryChange}
+                  filter={true}
+                />
+              </div>
             </div>
           </div>
         </div>
