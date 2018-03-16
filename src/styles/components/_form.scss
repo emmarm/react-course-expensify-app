@@ -11,3 +11,17 @@
   margin: 0 0 $m-size 0;
   font-style: italic;
 }
+
+.button-wrapper {
+  @media (min-width: $tablet-breakpoint) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .button--secondary {
+    @media (max-width: $tablet-breakpoint) {
+      margin-top: $s-size;
+    }
+  }
+}

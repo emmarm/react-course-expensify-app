@@ -9,12 +9,7 @@ html {
 }
 
 body {
-  background:
-    linear-gradient(
-      rgba(255, 255, 255, .7), 
-      rgba(255, 255, 255, .3)
-    ),
-    url('/images/congruent_pentagon.png');
+  background: url('/images/congruent_pentagon_light.png');
   color: $dark-gray;
   font-family: Helvetica, Arial, sans-serif;
   font-size: $m-size;

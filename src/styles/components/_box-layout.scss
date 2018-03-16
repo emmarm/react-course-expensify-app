@@ -1,5 +1,5 @@
 .box-layout {
-  background: url('/images/bg.jpg');
+  background: url('/images/congruent_pentagon_light.png');
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -11,6 +11,7 @@
 .box-layout__box {
   background: fade-out(white, .15);
   border-radius: 3px;
+  border: 1px solid darken($off-white, 10%);
   text-align: center;
   width: 25rem;
   padding: $l-size $m-size;

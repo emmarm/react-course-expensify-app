@@ -5,6 +5,10 @@
   font-weight: 300;
   height: 50px;
   padding: $s-size;
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 .text-input--narrow {
